@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Google Analytics Assignment</string>
+    <string name="text">In this assignment, you are required to develop an android application using java or kotlin. On the main page, you should have 3 buttons ( e.g Food, HP laptops, Samsung Phones ) If the user clicks on any button he should be redirected to a page containing products from the chosen category ( e.g Samsung Phones will show s6, s7, and s10 phones). If the user clicked any product, he should be redirected to the product details page.</string>
+</resources>
