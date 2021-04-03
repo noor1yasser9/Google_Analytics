@@ -1,6 +1,7 @@
 package com.nurbk.ps.googleanalyticsassignment.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.nurbk.ps.googleanalyticsassignment.R
@@ -10,7 +11,7 @@ import com.nurbk.ps.googleanalyticsassignment.model.Product
 class DetailsProductActivity : AppCompatActivity() {
 
     private lateinit var mBinding: ActivityDetailsProductBinding
-
+    val timeIn = System.currentTimeMillis()
     private lateinit var firebaseAnalytics: FirebaseAnalytics
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +45,11 @@ class DetailsProductActivity : AppCompatActivity() {
 
     }
 
+    override fun onDestroy() {
+        val timeOut = System.currentTimeMillis() - timeIn
+        logDataAnalytics("Time In Screen", timeOut.toString())
+        super.onDestroy()
+    }
 
     private fun logDataAnalytics(key: String, data: String) {
         val bundle = Bundle()
